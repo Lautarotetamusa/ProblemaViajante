@@ -19,17 +19,10 @@ A pesar de la aparente sencillez de su planteamiento, el TSP es uno de los más 
 
 **Definición:**
 
-Sean
-N ciudades de un territorio. La
-distancia entre cada ciudad viene dada por la [matriz D:](https://frro.cvg.utn.edu.ar/course/Tabla%20de%20Distancias.docx) NxN,
+Sean N ciudades de un territorio. La distancia entre cada ciudad viene dada por la matriz D: NxN,
 donde d[x,y] representa la distancia que hay entre la ciudad X y la ciudad Y.
 
-El
-**objetivo** es encontrar una ruta que, comenzando
-y terminando en una ciudad concreta,
-pase una sola vez por cada una
-de las ciudades y minimice la
-distancia recorrida por el viajante.
+El **objetivo** es encontrar una ruta que, comenzandoy terminando en una ciudad concreta,pase una sola vez por cada una de las ciudades y minimice la distancia recorrida por el viajante.
 
 **Ejercicios:**
 
@@ -40,24 +33,16 @@ distancia recorrida por el viajante.
 2. **Realizar
    un programa** que cuente con un menú con las siguientes opciones:
 
-a) Permitir ingresar una provincia y
-hallar la ruta de distancia mínima que logre unir todas las capitales de
-provincias de la República Argentina partiendo de dicha capital utilizando la
-siguiente heurística: **“Desde cada ciudad ir a la ciudad más cercana no visitada.”
-**Recordar regresar siempre a la ciudad de partida.
+a) Permitir ingresar una provincia y hallar la ruta de distancia mínima que logre unir todas las capitales de
+provincias de la República Argentina partiendo de dicha capital utilizando la siguiente heurística: **“Desde cada ciudad ir a la ciudad más cercana no visitada.**”
+**Recordar regresar siempre a la ciudad de partida**.
 
 Presentar un mapa de la República con el recorrido indicado. Además indicar la ciudad de partida, el recorrido
-completo y la longitud del trayecto. El programa deberá permitir seleccionar la
-capital que el usuario desee ingresar como inicio del recorrido.
+completo y la longitud del trayecto. El programa deberá permitir seleccionar la capital que el usuario desee ingresar como inicio del recorrido.
 
-b) **Encontrar el recorrido mínimo** para
-visitar todas las capitales de las provincias de la República Argentina
-siguiendo la heurística mencionada en el punto a. Deberá mostrar como salida el
-recorrido y la longitud del trayecto.
+b) **Encontrar el recorrido mínimo** para visitar todas las capitales de las provincias de la República Argentina siguiendo la heurística mencionada en el punto a. Deberá mostrar como salida el recorrido y la longitud del trayecto.
 
-c) **Hallar la ruta de distancia mínima
-que logre unir todas las capitales de provincias de la República Argentina,
-utilizando un algoritmo genético** .
+c) **Hallar la ruta de distancia mínima que logre unir todas las capitales de provincias de la República Argentina, utilizando un algoritmo genético** .
 
 
 ## Modo de Uso
@@ -66,7 +51,9 @@ utilizando un algoritmo genético** .
 
 Clonar el repositorio
 
-`git clone `
+```
+git clone https://github.com/Lautarotetamusa/ProblemaViajante.git
+```
 
 Si queremos instalar las librerías necesesarias en un entorno que no se queden guardadas en nuestra máquina
 
@@ -86,6 +73,6 @@ pip install -r requeriments.txt
 python main.py `<Method>`
 
 METHODS:
-   'heuristico origen'  Método Heuristico partiendo desde una ciudad
-   'heuristico general' Método Heuristico general
-   'genetico' Método Genetico
+  	'heuristico origen'  Método Heuristico partiendo desde una ciudad
+  	'heuristico general' Método Heuristico general
+  	'genetico' Método Genetico \
