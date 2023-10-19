@@ -17,8 +17,7 @@ def metodo_heuristico(origen, distancias):
     camino: list[int] = [origen]
     dist_origen = distancias[origen].copy() #Guardamos las distancias desde el origen para no perderlas
 
-    print_distancias(distancias)
-    while cant_visitadas < N_CIUDADES:
+    while cant_visitadas < N_CIUDADES-1:
         min = int(1e9)
         i = 0
         for dist in distancias[origen]:
@@ -28,7 +27,7 @@ def metodo_heuristico(origen, distancias):
             i += 1
 
         #Actualizamos los valores de la ciudad ya recorrida
-        for i in range(N_CIUDADES+1): 
+        for i in range(N_CIUDADES): 
             distancias[i][origen] = 0 #Columna
             distancias[origen][i] = 0 #Fila 
 
@@ -38,7 +37,8 @@ def metodo_heuristico(origen, distancias):
         cant_visitadas += 1
     
     #Volvemos a la ciudad de origen
-    dist_total += dist_origen[index]    
+    camino.append(camino[0])
+    dist_total += dist_origen[index]
     return camino, dist_total
 
 #Calcula el mejor camino con el método heuristico pero no partiendo de una ciudad sino de cualquiera
@@ -48,8 +48,6 @@ def heuristico_general(distancias):
 
     for ciudad in range(N_CIUDADES):
         camino, dist = metodo_heuristico(ciudad, copy.deepcopy(distancias))
-        print("origen:", ciudad)
-        print(dist, camino)
 
         if (dist < min_dist):
             min_dist = dist
