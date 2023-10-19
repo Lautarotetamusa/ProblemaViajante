@@ -1,6 +1,6 @@
 # Trabajo Práctico Algoritmos Geneticos
 
-### Ingeniería en Sistemas de Información UTN Rosario
+### Ingeniería en Sistemas de Información UTN Rosario 2023
 
 ### Integrantes:
 
@@ -44,6 +44,7 @@ b) **Encontrar el recorrido mínimo** para visitar todas las capitales de las pr
 
 c) **Hallar la ruta de distancia mínima que logre unir todas las capitales de provincias de la República Argentina, utilizando un algoritmo genético** .
 
+## [Conclusiones del trabajo](docs/TrabajoPracticoNro3-Grupo7.pdf)
 
 ## Modo de Uso
 

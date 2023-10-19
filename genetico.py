@@ -21,6 +21,7 @@ class Cromosoma:
     def __init__(self):
         #random sample elige N_CIUDADES de una lista=[1..N_CIUDADES] sin repeticion
         self.genes = random.sample(range(0, N_CIUDADES), N_CIUDADES)
+        self.genes.append(self.genes[0]) #Agregamos la primer ciudad al final para que vuelva
         self.fitness = 0.0
 
     #Calcular la distancia total de un recorrido dado
@@ -148,10 +149,15 @@ def ciclo(distancias):
             if random.random() < P_MUTACION:
                 mutacion(poblacion[i+1])
 
+            #Agregamos la primer ciudad al final para hacer que vuelva al origen
+            poblacion[i].genes[N_CIUDADES] = poblacion[i].genes[0]
+            poblacion[i+1].genes[N_CIUDADES] = poblacion[i+1].genes[0]
+
         fitness_poblacion(distancias)
 
 def metodo_genetico(distancias):
     gen_poblacion()
+    poblacion[0].print_gen()
 
     i_ciclo = 0
     while i_ciclo < N_CICLOS:
@@ -159,6 +165,7 @@ def metodo_genetico(distancias):
         i_ciclo += 1
     print_poblacion()
     print_fitness()
+    poblacion[0].print_gen()
     return poblacion[0]
 
 if __name__ == "__main__":

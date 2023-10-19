@@ -58,6 +58,8 @@ if __name__ == "__main__":
             exit(1)
 
         dibujar_ruta(camino, ciudades, origen)
+        for ciudad in camino:
+            print(ciudades[ciudad])
         print("Generacion terminada.")
         print("Mapa de rutas generado en")
         print(f"file://{os.getcwd()}/ruta.html")
