@@ -30,9 +30,7 @@ class Cromosoma:
             sum += distancias[self.genes[i]][self.genes[i+1]]
         self.dist = sum
 
-    def set_fitness(self, total: int):     
-        #self.fitness = self.dist / total
-        #self.fitness = 1 / self.dist
+    def set_fitness(self, total: int):  
         self.fitness = (total / self.dist) / N_CROMOSOMAS
 
     def print_gen(self):

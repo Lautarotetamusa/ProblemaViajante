@@ -29,7 +29,7 @@ coordenadas = [
     (-40.8135, -63.0000),
 ]
 
-def dibujar_ruta(camino, ciudades):
+def dibujar_ruta(camino, ciudades, origen=-1):
     # Crear un mapa centrado en una ubicación específica
     latitud = -35.675207
     longitud = -65.423429
@@ -37,11 +37,15 @@ def dibujar_ruta(camino, ciudades):
 
     #Agregar un marcador en cada capital
     for i in range(len(coordenadas)):
-        folium.Marker(coordenadas[i], tooltip=ciudades[i]).add_to(mapa)
+        if i != origen:
+            folium.Marker(coordenadas[i], tooltip=ciudades[i]).add_to(mapa)
 
     for i in range(len(camino)-1):
         coords_origen = coordenadas[camino[i]]
         coords_dest = coordenadas[camino[i+1]]
         folium.PolyLine([coords_origen, coords_dest], color="blue", weight=2).add_to(mapa)
+
+    if (origen != -1):
+        folium.Marker(coordenadas[origen], tooltip=ciudades[origen], icon=folium.Icon(color='red')).add_to(mapa)
 
     mapa.save(mapa_path)

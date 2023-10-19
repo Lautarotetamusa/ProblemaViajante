@@ -39,6 +39,7 @@ if __name__ == "__main__":
             
             elif (sys.argv[2] == "general"): 
                 camino, dist = heuristico_general(distancias)
+                origen = camino[0]
 
             else:
                 print(" Opcion Incorrecta ")
@@ -49,13 +50,14 @@ if __name__ == "__main__":
             cromosoma = metodo_genetico(distancias)
             camino = cromosoma.genes
             dist = cromosoma.dist
+            origen = -1
 
         else:
             print(" Opcion Incorrecta ")
             usage()
             exit(1)
 
-        dibujar_ruta(camino, ciudades)
+        dibujar_ruta(camino, ciudades, origen)
         print("Generacion terminada.")
         print("Mapa de rutas generado en")
         print(f"file://{os.getcwd()}/ruta.html")
